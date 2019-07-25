@@ -18,6 +18,79 @@
  *
  * @import "tailwindcss/components";
  */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-medium;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl mb-3 text-gray-800;
+}
+
+h3 {
+  @apply text-2xl mb-2 text-gray-700;
+}
+
+h4 {
+  @apply text-xl mb-1 text-gray-600;
+}
+
+p {
+  @apply mb-1;
+}
+
+.district-staff,
+.canada-staff,
+.csm-staff,
+.skyline-staff {
+  @apply font-semibold;
+}
+
+.position-name {
+  @apply font-light;
+}
+
+.district-staff {
+  @apply text-blue-800;
+}
+
+.canada-staff {
+  @apply text-green-800;
+}
+
+.csm-staff {
+  @apply text-blue-700;
+}
+
+.skyline-staff {
+  @apply text-red-800;
+}
+
+.campus-theme-box {
+  @apply p-3 m-2 mr-0 rounded bg-white shadow-md;
+}
+
+.link {
+  @apply text-blue-700 underline py-2;
+}
+
+.side-navigation li {
+  @apply border-t-0;
+}
+
+.side-navigation:first-child {
+  @apply border-t-2;
+}
+
 @tailwind components;
 
 /**

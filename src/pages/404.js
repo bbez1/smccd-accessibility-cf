@@ -8,7 +8,7 @@ function NotFoundPage() {
   return (
     <Layout>
       <SEO title="404: Not found" />
-      <div>
+      <div class="h-full w-full flex flex-col items-center justify-center">
         <img
           src={abductionIllustration}
           className="block mx-auto w-1/2"

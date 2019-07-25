@@ -1,8 +1,12 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Tailwind`,
-    description: `Gatsby starter styled with Tailwind`,
-    author: `@taylorbryant`
+    title: `SMCCCD Accessibility`,
+    description: `Gatsby blog styled with Tailwind`,
+    author: `@bbesnyi`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,6 +28,26 @@ module.exports = {
       options: {
         tailwind: true,
         purgeOnly: ["src/css/style.css"]
+      }
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `vswpfqrnd4n9`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: { output: `/sitemap.xml` }
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "http://localhost:8000",
+        sitemap: "http://localhost:8000/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }]
       }
     }
   ]
