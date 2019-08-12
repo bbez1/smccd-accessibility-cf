@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-function Canvas({ data }) {
+function Post({ data }) {
   return (
     <Layout>
       <SEO title={data.contentfulCanvasDocs.title} />
@@ -14,12 +14,17 @@ function Canvas({ data }) {
   );
 }
 
-export const query = graphql`
+export default Post;
+
+export const pageQuery = graphql`
   query canvasQuery($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     contentfulCanvasDocs(slug: { eq: $slug }) {
       title
     }
   }
 `;
-
-export default Canvas;

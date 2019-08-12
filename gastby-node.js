@@ -2,13 +2,14 @@ const path = require(`path`);
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
-  const canvasTemplate = path.resolve(`./src/templates/canvas.js`);
+  const canvasTemplate = path.resolve(`./src/templates/post.js`);
 
   return graphql(`
     {
       allContentfulCanvasDocs {
         edges {
           node {
+            id
             slug
             title
           }
